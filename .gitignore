@@ -28,3 +28,6 @@
 
 # Keystore files used for signing Android apps.
 /*.keystore
+
+
+.vscode/

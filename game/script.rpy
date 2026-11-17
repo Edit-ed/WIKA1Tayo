@@ -1,33 +1,30 @@
-﻿# The script of the game goes in this file.
-
-# Declare characters used by this game. The color argument colorizes the
-# name of the character.
-
-define e = Character("Eileen")
-
-
-# The game starts here.
+﻿define s = Character('Sylvie', color="#c8ffc8")
+define m = Character('Me', color="#c8c8ff")
+image bg meadow = "./images/bg meadow.png" 
+# image bg meadow = Transform("bg meadow.png", xysize=(1920, 1080),fit="cover")
 
 label start:
 
-    # Show a background. This uses a placeholder by default, but you can
-    # add a file (named either "bg room.png" or "bg room.jpg") to the
-    # images directory to show it.
+    scene bg meadow
 
-    scene bg room
+    "After a short while, we reach the meadows just outside the neighborhood where we both live."
 
-    # This shows a character sprite. A placeholder is used, but you can
-    # replace it by adding a file named "eileen happy.png" to the images
-    # directory.
+    "It's a scenic view I've grown used to. Autumn is especially beautiful here."
 
-    show eileen happy
+    "When we were children, we played in these meadows a lot, so they're full of memories."
 
-    # These display lines of dialogue.
+    m "Hey... Umm..."
 
-    e "You've created a new Ren'Py game."
+    show sylvie green smile
 
-    e "Once you add a story, pictures, and music, you can release it to the world!"
+    "She turns to me and smiles. She looks so welcoming that I feel my nervousness melt away."
 
-    # This ends the game.
+    "I'll ask her...!"
 
-    return
+    m "Ummm... Will you..."
+
+    m "Will you be my artist for a visual novel?"
+
+    show sylvie green surprised
+
+    "Silence."
