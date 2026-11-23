@@ -28,6 +28,20 @@ init python:
         renpy.pause()          # waits for a click
         renpy.hide_screen("fixed_dialogue")
 
+label option_1:
+    e_nvl "really."
+    show nighten phone e1m2
+    $ say_fixed("Nighten", "oh.")
+    return
+
+label option_2:
+    nvl_narrator "You cannot message this person no longer."
+    show nighten phone e1m2
+    $ say_fixed("Nighten", "oh.")
+    return
+
+
+
 # skips the main menu
 label main_menu:
     return
@@ -58,6 +72,11 @@ label start:
     n_nvl e1m2_b "we talked about showing off the phone the other day. didja forget you dummy"
     e_nvl "what."
     e_nvl "I dont even know you."
-    show nighten phone e1m2
-    $ say_fixed("Nighten", "oh.")
-    return
+    
+    menu(nvl=True):
+        "really?":
+            n_nvl "really?"
+            jump option_1
+        "its-a-me, nighten!": 
+            n_nvl "its-a-me, nighten!"
+            jump option_2
